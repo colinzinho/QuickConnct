@@ -11,39 +11,41 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Explore()
+            
                 .tabItem() {
-                    Image(systemName: "binoculars")
-                        .symbolVariant(.none)
-                    //Text("Explore")
+                    ZStack {
+                        Image(systemName: "binoculars")
+                            .symbolVariant(.none)
+                                        .aspectRatio(contentMode: .fit)
+                            .frame(width: 22, height: 62) // Slightly smaller icon
+                                        .padding(.top, 40) // Pull it down a bit visually
+                        Text("Explore")
+                    }
                 }
             Events()
                 .tabItem() {
                     Image(systemName: "calendar")
                         .symbolVariant(.none)
-                    //Text("Events")
+                    Text("Events")
                 }
             Likes()
                 .tabItem() {
                     Image(systemName: "link")
                         .symbolVariant(.none)
-                    //Text("Likes")
+                    Text("Likes")
                 }
             Chats()
                 .tabItem() {
                     Image(systemName: "bubble.left")
                         .symbolVariant(.none)
-                    //Text("Chat")
+                    Text("Chats")
                 }
             Profile()
                 .tabItem() {
                     Image(systemName: "person.crop.circle")
                         .symbolVariant(.none)
-                    //Text("Profile")
+                    Text("Profile")
                 }
-        }
-        .background {
-            AppTheme.accentColor
-                .ignoresSafeArea()
         }
     }
 }
